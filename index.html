@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore astronomy, major scientific discoveries, and fascinating facts about the universe.">
+  <meta name="description" content="Explore astronomy, scientific discoveries, and fascinating facts about the universe.">
   <title>Exploring the Cosmos: A Guide to Modern Astronomy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,109 +11,36 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Exploring the Cosmos home">
-        <span class="brand-icon" aria-hidden="true">✦</span>
-        <span>THE COSMOS</span>
-      </a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#discoveries">Discoveries</a>
-        <a href="#fun-facts">Space Facts</a>
-      </nav>
-    </div>
-  </header>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">✦</span><span>THE COSMOS</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a><a href="discoveries.html" >Discoveries</a><a href="contact.html" >Contact</a>
+    </nav>
+  </div></header>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <p class="eyebrow">A JOURNEY BEYOND OUR WORLD</p>
-        <h1 id="page-title">Exploring the <span>Cosmos</span></h1>
-        <p class="hero-description">A journey through space, stars, and humanity's quest to understand the universe.</p>
-        <a class="primary-button" href="#about">Begin exploring <span aria-hidden="true">↓</span></a>
-      </div>
-      <div class="hero-caption">LOOK UP. WONDER MORE.</div>
-    </section>
+<main id="main-content">
+  <section class="hero" id="top" aria-labelledby="page-title"><div class="hero-overlay" aria-hidden="true"></div><div class="container hero-content">
+    <p class="eyebrow">A JOURNEY BEYOND OUR WORLD</p><h1 id="page-title">Exploring the <span>Cosmos</span></h1>
+    <p class="hero-description">A journey through space, stars, and humanity's quest to understand the universe.</p><a class="primary-button" href="#about">Begin exploring <span aria-hidden="true">↓</span></a>
+  </div><p class="hero-caption">LOOK UP. WONDER MORE.</p></section>
+  <section class="content-section about-section" id="about"><div class="container about-grid"><div class="section-copy">
+    <p class="eyebrow">01 / THE BIG PICTURE</p><h2>Why We Look<br>to the <span>Stars</span></h2>
+    <p>For thousands of years, humans have looked up at the night sky with wonder. Astronomy allows us to explore our origins, search for life beyond Earth, and understand the vast universe we call home.</p>
+    <p>With powerful telescopes, spacecraft, and international research, scientists continue to uncover the secrets of planets, stars, galaxies, and the forces that shape them.</p>
+  </div><figure class="about-image"><img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=85" alt="A colorful nebula surrounded by distant stars"><figcaption>Our universe is filled with places still waiting to be discovered.</figcaption></figure></div></section>
+  <section class="content-section discoveries-section"><div class="container"><div class="section-heading"><p class="eyebrow">02 / BREAKTHROUGHS</p><h2>Major Scientific <span>Discoveries</span></h2><p class="section-intro">Explore discoveries that have changed how we understand space.</p></div>
+    <div class="discovery-grid">
+      <article class="discovery-card"><span class="card-number" aria-hidden="true">01</span><div class="card-icon" aria-hidden="true">◉</div><h3>The James Webb Space Telescope</h3><p>The James Webb Space Telescope observes the universe in infrared light, helping scientists study early galaxies, forming stars, and distant planets.</p><span class="card-tag">DEEP SPACE OBSERVATION</span></article>
+      <article class="discovery-card"><span class="card-number" aria-hidden="true">02</span><div class="card-icon" aria-hidden="true">◎</div><h3>Worlds Beyond Our Solar System</h3><p>Thousands of exoplanets have been identified orbiting other stars. Their variety helps researchers understand how planetary systems form.</p><span class="card-tag">EXOPLANET RESEARCH</span></article>
+      <article class="discovery-card"><span class="card-number" aria-hidden="true">03</span><div class="card-icon" aria-hidden="true">〰</div><h3>Gravitational Waves</h3><p>Scientists have detected ripples in spacetime created by powerful events, including collisions between black holes.</p><span class="card-tag">A NEW WAY TO LISTEN</span></article>
+    </div><p style="margin-top:1.5rem"><a class="primary-button" href="discoveries.html">Read more discoveries <span aria-hidden="true">→</span></a></p>
+  </div></section>
+  <section class="content-section facts-section"><div class="container"><div class="section-heading"><p class="eyebrow">03 / THE UNEXPECTED</p><h2>Space <span>Facts</span></h2><p class="section-intro">A few reminders that the universe is stranger and more amazing than it seems.</p></div>
+    <div class="facts-grid"><article class="fact-card"><span class="fact-symbol" aria-hidden="true">☼</span><p class="fact-label">OUR STAR</p><h3>The Sun</h3><p>Light from the Sun takes about 8 minutes and 20 seconds to reach Earth.</p></article><article class="fact-card"><span class="fact-symbol" aria-hidden="true">◌</span><p class="fact-label">OUR GALAXY</p><h3>The Milky Way</h3><p>Our solar system is one small part of a galaxy containing billions of stars.</p></article><article class="fact-card"><span class="fact-symbol" aria-hidden="true">⌁</span><p class="fact-label">EXTREME WORLDS</p><h3>Neutron Stars</h3><p>A neutron star packs more mass than the Sun into a sphere about the size of a city.</p></article><article class="fact-card"><span class="fact-symbol" aria-hidden="true">✧</span><p class="fact-label">COSMIC SCALE</p><h3>Starlight</h3><p>When we look at distant stars, we see light that began its journey years ago.</p></article></div>
+  </div></section>
+  <section class="closing-banner"><div class="container closing-content"><p class="eyebrow">THE UNIVERSE IS CALLING</p><h2>Stay curious.<br><span>Keep looking up.</span></h2></div></section>
+</main>
 
-    <section class="content-section about-section" id="about">
-      <div class="container about-grid">
-        <div class="section-copy">
-          <p class="eyebrow">01 / THE BIG PICTURE</p>
-          <h2>Why We Look<br>to the <span>Stars</span></h2>
-          <p>For thousands of years, humans have looked up at the night sky with wonder. Astronomy allows us to explore our origins, search for life beyond Earth, and understand the vast universe we call home.</p>
-          <p>With powerful telescopes, spacecraft, and international research, scientists continue to uncover the secrets of planets, stars, galaxies, and the forces that shape them.</p>
-        </div>
-        <figure class="about-image">
-          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=85" alt="A colorful nebula and distant stars in deep space">
-          <figcaption>Our universe is filled with places still waiting to be discovered.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="content-section discoveries-section" id="discoveries">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">02 / BREAKTHROUGHS</p>
-          <h2>Major Scientific <span>Discoveries</span></h2>
-          <p class="section-intro">Each discovery gives us a new piece of the cosmic puzzle.</p>
-        </div>
-        <div class="discovery-grid">
-          <article class="discovery-card">
-            <div class="card-number">01</div>
-            <div class="card-icon" aria-hidden="true">◉</div>
-            <h3>The James Webb Space Telescope</h3>
-            <p>The James Webb Space Telescope observes the universe in infrared light, helping scientists study the earliest galaxies, forming stars, and atmospheres of distant planets.</p>
-            <span class="card-tag">DEEP SPACE OBSERVATION</span>
-          </article>
-          <article class="discovery-card">
-            <div class="card-number">02</div>
-            <div class="card-icon" aria-hidden="true">◎</div>
-            <h3>Worlds Beyond Our Solar System</h3>
-            <p>Thousands of exoplanets have been identified orbiting other stars. Their variety helps researchers understand how planetary systems form and where life might be possible.</p>
-            <span class="card-tag">EXOPLANET RESEARCH</span>
-          </article>
-          <article class="discovery-card">
-            <div class="card-number">03</div>
-            <div class="card-icon" aria-hidden="true">〰</div>
-            <h3>Gravitational Waves</h3>
-            <p>Scientists have detected ripples in spacetime created by powerful cosmic events, such as collisions between black holes. This gives us a new way to observe the universe.</p>
-            <span class="card-tag">A NEW WAY TO LISTEN</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section facts-section" id="fun-facts">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">03 / THE UNEXPECTED</p>
-          <h2>Space <span>Facts</span></h2>
-          <p class="section-intro">A few reminders that the universe is stranger and more amazing than it seems.</p>
-        </div>
-        <div class="facts-grid">
-          <article class="fact-card"><span class="fact-symbol" aria-hidden="true">☼</span><p class="fact-label">OUR STAR</p><h3>The Sun</h3><p>Light from the Sun takes about 8 minutes and 20 seconds to reach Earth.</p></article>
-          <article class="fact-card"><span class="fact-symbol" aria-hidden="true">◌</span><p class="fact-label">OUR GALAXY</p><h3>The Milky Way</h3><p>Our solar system is one tiny part of a galaxy containing billions of stars.</p></article>
-          <article class="fact-card"><span class="fact-symbol" aria-hidden="true">⌁</span><p class="fact-label">EXTREME WORLDS</p><h3>Neutron Stars</h3><p>A neutron star packs more mass than the Sun into a sphere about the size of a city.</p></article>
-          <article class="fact-card"><span class="fact-symbol" aria-hidden="true">✧</span><p class="fact-label">COSMIC SCALE</p><h3>Starlight</h3><p>When we look at distant stars, we are seeing light that began its journey years ago.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="closing-banner">
-      <div class="container closing-content">
-        <p class="eyebrow">THE UNIVERSE IS CALLING</p>
-        <h2>Stay curious.<br><span>Keep looking up.</span></h2>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 Exploring the Cosmos</p>
-      <a href="#top">Back to top ↑</a>
-    </div>
-  </footer>
-</body>
-</html>
+  <footer class="site-footer"><div class="container footer-inner"><p>© 2026 Exploring the Cosmos</p><a href="#top">Back to top ↑</a></div></footer>
+</body></html>

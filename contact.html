@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore astronomy, scientific discoveries, and fascinating facts about the universe.">
+  <title>Contact | Exploring the Cosmos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">✦</span><span>THE COSMOS</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" >Home</a><a href="discoveries.html" >Discoveries</a><a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div></header>
+
+<main id="main-content"><section class="content-section contact-section" id="top"><div class="container"><div class="section-heading"><p class="eyebrow">GET IN TOUCH</p><h1 id="page-title">Contact <span>Us</span></h1><p class="section-intro">Have a question about astronomy or this project? Send a message using the form below.</p></div>
+<div class="contact-layout"><div><h2>Let's talk about <span>space</span></h2><p>Use this form to share a question, suggestion, or topic you would like to learn more about. All fields are required so your message includes the information needed for a reply.</p><div class="design-note"><strong>Accessibility:</strong> Every field has a visible label. Error messages appear beside the field that needs attention, and the form summary is announced to screen-reader users.</div></div>
+<form class="contact-panel" id="contact-form" novalidate>
+<fieldset style="border:0;padding:0;margin:0"><legend style="font:600 1.25rem 'Space Grotesk',Arial,sans-serif;margin-bottom:1rem">Your message</legend>
+<div class="form-grid">
+<div class="form-field"><label for="full-name">Full name</label><input id="full-name" name="full-name" type="text" autocomplete="name" required aria-describedby="name-error"><p class="field-error" id="name-error"></p></div>
+<div class="form-field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error"><p class="field-error" id="email-error"></p></div>
+<div class="form-field full"><label for="topic">What is your message about?</label><select id="topic" name="topic" required aria-describedby="topic-error"><option value="">Choose a topic</option><option value="astronomy">Astronomy question</option><option value="website">Website feedback</option><option value="other">Other</option></select><p class="field-error" id="topic-error"></p></div>
+<div class="form-field full"><label for="message">Message</label><textarea id="message" name="message" required minlength="10" aria-describedby="message-help message-error"></textarea><p class="form-help" id="message-help">Please enter at least 10 characters.</p><p class="field-error" id="message-error"></p></div>
+</div></fieldset>
+<div class="form-actions"><button class="button" type="submit">Check my message</button></div>
+<p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+</form></div></div></section></main>
+<script src="form.js" defer></script>
+
+  <footer class="site-footer"><div class="container footer-inner"><p>© 2026 Exploring the Cosmos</p><a href="#top">Back to top ↑</a></div></footer>
+</body></html>
