@@ -1,44 +1,62 @@
-// Accessible client-side form validation. This demo does not send or store messages.
-const form = document.querySelector('#contact-form');
-if (form) {
+/* Accessible client-side validation for the contact form. No data is sent or stored. */
+(() => {
+  const form = document.querySelector("#contact-form");
+  if (!form) return;
+
   const fields = [
-    { id: 'full-name', error: 'name-error', message: 'Please enter your name.' },
-    { id: 'email', error: 'email-error', message: 'Please enter a valid email address.' },
-    { id: 'topic', error: 'topic-error', message: 'Please choose a topic.' },
-    { id: 'message', error: 'message-error', message: 'Please enter a message with at least 10 characters.' }
+    { input: form.elements.fullName, error: document.querySelector("#name-error"),
+      validate: value => value.trim() ? "" : "Please enter your full name." },
+    { input: form.elements.email, error: document.querySelector("#email-error"),
+      validate: value => {
+        if (!value.trim()) return "Please enter your email address.";
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : "Enter an email address in the format name@example.com.";
+      } },
+    { input: form.elements.topic, error: document.querySelector("#topic-error"),
+      validate: value => value ? "" : "Please choose a topic." },
+    { input: form.elements.message, error: document.querySelector("#message-error"),
+      validate: value => value.trim().length >= 10 ? "" : "Please enter a message of at least 10 characters." }
   ];
-  const status = document.querySelector('#form-status');
-  function validateField(item) {
-    const field = document.getElementById(item.id);
-    const error = document.getElementById(item.error);
-    let message = '';
-    if (!field.value.trim()) message = item.message;
-    else if (item.id === 'email' && !field.validity.valid) message = item.message;
-    else if (item.id === 'message' && field.value.trim().length < 10) message = item.message;
-    field.setAttribute('aria-invalid', message ? 'true' : 'false');
-    error.textContent = message;
+
+  const status = document.querySelector("#form-status");
+
+  function validateField(field) {
+    const message = field.validate(field.input.value);
+    field.error.textContent = message;
+    if (message) field.input.setAttribute("aria-invalid", "true");
+    else field.input.removeAttribute("aria-invalid");
     return !message;
   }
-  fields.forEach(item => {
-    const field = document.getElementById(item.id);
-    field.addEventListener('blur', () => validateField(item));
-    field.addEventListener('input', () => {
-      if (field.getAttribute('aria-invalid') === 'true') validateField(item);
-      status.hidden = true;
+
+  fields.forEach(field => {
+    field.input.addEventListener("blur", () => validateField(field));
+    field.input.addEventListener("input", () => {
+      if (field.input.hasAttribute("aria-invalid")) validateField(field);
     });
-    field.addEventListener('change', () => validateField(item));
+    field.input.addEventListener("change", () => {
+      if (field.input.hasAttribute("aria-invalid")) validateField(field);
+    });
   });
-  form.addEventListener('submit', event => {
+
+  form.addEventListener("submit", event => {
     event.preventDefault();
+    status.textContent = "";
+    status.className = "form-status";
     const results = fields.map(validateField);
-    if (results.every(Boolean)) {
-      status.textContent = 'All fields look good. This demonstration form does not send messages, but your entries passed the checks.';
-      status.hidden = false;
-    } else {
-      status.textContent = 'Please correct the highlighted fields. Error messages are shown beside each field.';
-      status.hidden = false;
-      const firstInvalid = fields.find(item => document.getElementById(item.id).getAttribute('aria-invalid') === 'true');
-      if (firstInvalid) document.getElementById(firstInvalid.id).focus();
+    const firstInvalid = fields.find((field, index) => !results[index]);
+
+    if (firstInvalid) {
+      status.textContent = "Please review the highlighted fields.";
+      status.classList.add("error");
+      firstInvalid.input.focus();
+      return;
     }
+
+    status.textContent = "Your form looks good. This demo does not send or store your message.";
+    status.classList.add("success");
+    form.reset();
+    fields.forEach(field => {
+      field.error.textContent = "";
+      field.input.removeAttribute("aria-invalid");
+    });
   });
-}
+})();
