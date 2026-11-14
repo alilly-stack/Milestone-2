@@ -67,3 +67,10 @@ The stylesheet includes breakpoints for mobile (480px and below), tablet (768px 
 - Test the contact form with empty and invalid entries to confirm inline errors appear and focus moves to the first invalid field.
 - Test keyboard navigation and layouts at 320px, 768px, and 1200px.
 - Commit the final README changes so the instructor can see the fix documentation.
+## Accessibility & WAVE Results
+All three live pages (`index.html`, `discoveries.html`, and `contact.html`) were tested using the WAVE browser extension and passed with **0 errors** and **0 contrast errors**.
+
+* **Fix 1:** Added a skip-to-main-content link and target landmark so keyboard users can bypass the header navigation.
+* **Fix 2:** Added `aria-label="Main navigation"` and `aria-current="page"` to the navigation bar to clarify current location for screen readers.
+* **Fix 3:** Associated every form input with a descriptive `<label>` element and grouped related controls with `<fieldset>` and `<legend>`.
+* **Color Contrast:** Verified all text and background color combinations pass WCAG AA contrast standards using the WebAIM Contrast Checker.
